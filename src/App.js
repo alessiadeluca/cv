@@ -1,15 +1,9 @@
-import logo from "./logo.svg";
 import "./App.css";
+import Scroll from "./Components/Scroll/Scroll";
+import Test from "./Components/Test/Test";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Work in Progress</p>
-      </header>
-    </div>
-  );
+  return <Scroll />;
 }
 
 export default App;
