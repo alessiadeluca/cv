@@ -1,4 +1,4 @@
-import { Scroll, useScroll } from "@react-three/drei";
+import { Html, Scroll, useScroll } from "@react-three/drei";
 import { useEffect, useState, useRef } from "react";
 import { useFrame, useThree } from "@react-three/fiber";
 import Hubble from "../Spacecrafts/hubble/hubble";
@@ -27,7 +27,7 @@ export const ScrollContainer = () => {
     ref3.current.position.set(1.5, 0, 0 + 20 * scroll.offset);
 
     ref4.current.position.set(-scroll.offset * 12, 0, 0);
-    ref4.current.rotation.set(-scroll.offset * 12, -scroll.offset * 20, 0);
+    ref4.current.visible = scroll.visible(0, 1 / 10);
   });
 
   function Box(props) {
@@ -59,21 +59,32 @@ export const ScrollContainer = () => {
       <mesh ref={ref4} scale={[0.2, 0.2, 0.2]}>
         <Hubble />
         <ambientLight />
-        {/* <ambientLight />
-        <pointLight position={[10, 10, 10]} />
-        <Box position={[0, 0, 0]} /> */}
       </mesh>
-      <mesh ref={ref1} position={[0, 0, 0]}>
+      <mesh ref={ref1}>
         <torusBufferGeometry />
         <meshNormalMaterial />
       </mesh>
-      <mesh ref={ref2} position={[0, 0, 0]}>
-        <boxBufferGeometry />
-        <meshNormalMaterial />
+      <mesh ref={ref2}>
+        {/* <boxBufferGeometry />
+        <meshNormalMaterial /> */}
+        <Html center>
+          <h1>AAA</h1>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere,
+            praesentium!
+          </p>
+        </Html>
       </mesh>
       <mesh ref={ref3}>
-        <sphereBufferGeometry />
-        <meshNormalMaterial />
+        {/* <sphereBufferGeometry />
+        <meshNormalMaterial /> */}
+        <Html center>
+          <h1>AAA</h1>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere,
+            praesentium!
+          </p>
+        </Html>
       </mesh>
     </>
   );
