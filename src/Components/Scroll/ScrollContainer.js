@@ -2,6 +2,7 @@ import { Html, Scroll, useScroll } from "@react-three/drei";
 import { useEffect, useState, useRef } from "react";
 import { useFrame, useThree } from "@react-three/fiber";
 import Hubble from "../Spacecrafts/hubble/hubble";
+import Surface from "../Surface/Surface";
 
 export const ScrollContainer = () => {
   const scroll = useScroll();
@@ -26,8 +27,9 @@ export const ScrollContainer = () => {
     );
     ref3.current.position.set(1.5, 0, 0 + 20 * scroll.offset);
 
-    ref4.current.position.set(-scroll.offset * 12, 0, 0);
-    ref4.current.visible = scroll.visible(0, 1 / 10);
+    ref4.current.position.set(0, 0, scroll.offset * 2);
+
+    /* ref4.current.visible = scroll.visible(0, 1 / 10); */
   });
 
   function Box(props) {
@@ -56,9 +58,13 @@ export const ScrollContainer = () => {
 
   return (
     <>
-      <mesh ref={ref4} scale={[0.2, 0.2, 0.2]}>
-        <Hubble />
+      {/* <Surface />
+      <ambientLight /> */}
+      <mesh ref={ref4}>
+        <Surface />
         <ambientLight />
+        {/* <Hubble />
+        <ambientLight /> */}
       </mesh>
       <mesh ref={ref1}>
         <torusBufferGeometry />
