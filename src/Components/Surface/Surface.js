@@ -41,14 +41,14 @@ function Terrain({ wireframe, range }) {
           attach="material"
           color="#00ffff"
           /* color="#C1440E" */
-          /* wireframe */
+          wireframe
           map={color}
           displacementMap={height}
           displacementScale={6}
-          /* alphaMap={opacity} */
-          /* transparent */
-          /* depthWrite={false}
-          opacity={1} */
+          alphaMap={opacity}
+          transparent
+          depthWrite={false}
+          opacity={1}
         />
       </Plane>
     </>
