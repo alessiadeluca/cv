@@ -36,23 +36,19 @@ function Terrain({ wireframe, range }) {
 
   return (
     <>
-      <Plane
-        rotation={[-1.5, 0, 0]}
-        position={[0, 0, 0]}
-        args={[60, 60, 320, 320]}
-      >
+      <Plane rotation={[-1.5, 0, 0]} args={[32, 32, 320, 320]}>
         <meshStandardMaterial
           attach="material"
           color="#00ffff"
           /* color="#C1440E" */
-          wireframe
+          /* wireframe */
           map={color}
           displacementMap={height}
-          displacementScale={10}
+          displacementScale={6}
           /* alphaMap={opacity} */
-          /* transparent
-          depthWrite={false} */
-          /* opacity={0.6} */
+          /* transparent */
+          /* depthWrite={false}
+          opacity={1} */
         />
       </Plane>
     </>
