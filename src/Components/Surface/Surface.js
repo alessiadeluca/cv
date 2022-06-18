@@ -36,12 +36,24 @@ function Terrain({ wireframe, range }) {
 
   return (
     <>
-      <Plane rotation={[-1.5, 0, 0]} args={[32, 32, 320, 320]}>
+      <Sphere args={[0.2, 12, 12]} position={[3, -1, 5]}>
+        <meshPhongMaterial color="#f3f3f3" />
+      </Sphere>
+
+      <Sphere args={[0.2, 12, 12]} position={[-3, -1.7, -5]}>
+        <meshPhongMaterial color="#f3f3f3" />
+      </Sphere>
+
+      <Plane
+        rotation={[-Math.PI / 2, 0, 0]}
+        args={[32, 32, 320, 320]}
+        position={[0, -2, 0]}
+      >
         <meshStandardMaterial
           attach="material"
           color="#00ffff"
           /* color="#C1440E" */
-          wireframe
+          /* wireframe */
           map={color}
           displacementMap={height}
           displacementScale={6}

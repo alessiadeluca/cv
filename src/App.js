@@ -4,7 +4,8 @@ import Scroll from "./Components/Scroll/Scroll";
 import Test from "./Components/Test/Test";
 
 function App() {
-  return <Map />;
+  return <Scroll />;
+  /* return <Map />; */
 }
 
 export default App;
